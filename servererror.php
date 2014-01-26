@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Registered | Book Bay</title>
+	<title>Error</title>
 	<link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -25,8 +25,8 @@
 	
 			<div id="login-intro" class="fl">
 			
-				<h1>Registered to Book Bay</h1>
-				<h5>Enjoy</h5>
+				<h1>Please continue</h1>
+				<h5></h5>
 			
 			</div> <!-- login-intro -->
 			
@@ -39,11 +39,11 @@
 	</div> <!-- end header -->
 
 
-	<div id="content" style="text-align:center">
-		<div id="register_text1">You a have been registered to Book Bay Successfully</div> <br>
-		<div id="register_text2">Now, you can login to your account</div> <br>
+	<div id="content">
+		<div id="register_text1">SERVER ERROR!! </div> <br>
+		<div id="register_text2">Please try again</div> <br>
 		<div id="register_button">
-		<a poi href="login.php" class="button round blue"> LOG IN</a>
+		<a poi href="forget.php" class="button round blue"> BACK</a>
 		</div>
 	</div>
 	<!-- FOOTER -->

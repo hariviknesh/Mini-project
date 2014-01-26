@@ -49,17 +49,50 @@ require_once "connect.php";
 	</div> 
 
 
-		<div id="content" style="text-align:center">
+		<div id='content' style='text-align:center'>
 
 			
-				<a href="sell.php" class="button round blue image-right ic-right-arrow home-login">SELL</a>
-	
-				<br><br><p id="home-or">OR</p>
+				<?php
+				
 
-			<a href="buy.php" class="button round blue image-right ic-right-arrow home-signup">BUY</a>
+$sql = "select * from  item";
+$result = mysql_query($sql) or die ( mysql_error() );
 
 
-	</div>
+//grid design
+	echo "<ul id='og-grid' class='og-grid'>";
+
+while($row = mysql_fetch_assoc($result))
+{
+	$img=$row['image'];
+	$book=$row['bookid'];
+	$bname=$row['bookname'];
+	$_SESSION['img']=$row['image'];
+	$_SESSION['bookname']=$row['bookname'];
+	$_SESSION['deadline']=$row['deadline'];
+	$_SESSION['min']=$row['minbid'];
+	$_SESSION['id']=$row['bookid'];
+
+
+
+   echo"
+   		<li>
+ 
+        <div class='product_img'><a href='buyredir.php?id=$book'><img src=$img height=250 width=250 /></a></div>
+            <div class='product_title'><a href=$img>$bname</a></div>
+
+       </li>
+        
+     ";
+
+    
+}
+echo "</ul>";
+
+
+?>
+
+</div>	
 
 
 

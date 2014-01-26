@@ -6,7 +6,7 @@ session_start();
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Login | Book Bay</title>
+	<title>password recovery</title>
 	
 	<!-- Stylesheets -->
 	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
@@ -37,8 +37,8 @@ session_start();
 	
 			<div id="login-intro" class="fl">
 			
-				<h1>Login to Book Bay</h1>
-				<h5>Enter your credentials below</h5>
+				<h1>Password recovery</h1>
+				<h5>Enter your email address below</h5>
 			
 			</div> <!-- login-intro -->
 			
@@ -55,27 +55,22 @@ session_start();
 	<!-- MAIN CONTENT -->
 	<div id="content">
 	
-		<form action="check.php" method="POST" id="login-form">
+		<form action="recovery.php" method="POST" id="login-form">
 		
 			<fieldset>
 
 				<p>
-					<label for="login-username">REGISTER NO.</label>
-					<input type="int"  name="adno" id="login-username" class="round full-width-input height-adjust" autofocus />
+					<label for="login-username">Email.</label>
+					<input type="text"  name="email" id="login-username" class="round full-width-input height-adjust" autofocus />
 				</p>
 
-				<p>
-					<label for="login-password">password</label>
-					<input type="password" name="password" id="login-password" class="round full-width-input" />
-				</p>
+		
 				
-				<p>I've <a href="forget.php">forgotten my password</a>.</p>
-				
-				<input class="button round blue image-right ic-right-arrow" type="submit" value="LOGIN"/>
+				<input class="button round blue image-right ic-right-arrow" type="submit" value="SUBMIT"/>
 
 			</fieldset>
 
-			<br/><div class="information-box round">If you don't have an account , return to the Home and Register.	</div>
+			<br/>
 
 		</form>
 		

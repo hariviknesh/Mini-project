@@ -39,11 +39,11 @@
 
 	</div> <!-- end header -->
 	
-	<div id="content">
+	<div id="content" style="text-align:center">
 
 				<a href="login.php" class="button round blue image-right ic-right-arrow home-login">LOG IN</a>
 	
-				<p id="home-or">OR</p>
+				<br/> <br/><p id="home-or">OR</p>
 
 			<a href="signup.php" class="button round blue image-right ic-right-arrow home-signup">SIGN UP</a>
 
@@ -54,7 +54,7 @@
 <!-- FOOTER -->
 	<div id="footer">
 
-		<p>&copy; Copyright 2013 <a href="#">Crown Inc</a>. All rights reserved.</p>
+		<p>&copy; Copyright 2013 <a href="#">Cec Inc</a>. All rights reserved.</p>
 	
 	</div> <!-- end footer -->
 </body>

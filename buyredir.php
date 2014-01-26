@@ -49,17 +49,50 @@ require_once "connect.php";
 	</div> 
 
 
-		<div id="content" style="text-align:center">
-
+		<div id='content' style='text-align:center'>
 			
-				<a href="sell.php" class="button round blue image-right ic-right-arrow home-login">SELL</a>
-	
-				<br><br><p id="home-or">OR</p>
+				<?php
 
-			<a href="buy.php" class="button round blue image-right ic-right-arrow home-signup">BUY</a>
+				$book=$_GET['id'];
+
+				$sql = "select * from  item where bookid='$book'";
+				$result = mysql_query($sql) or die ( mysql_error() );    
+
+				while ($line=mysql_fetch_assoc($result)) {
+					
+					$img=$line['image'];
+					$bname=$line['bookname'];
+					$bid=$line['minbid'];
+					$dead=$line['deadline'];
+
+					echo "<img src=$img height=250 width=250>";
+					echo"<h1 style='font-size:30px'>$bname</h1>";
+				?>
+					<?php
+					echo"<h1>Minimum Bid: ₹ $bid</h1>";
+					echo "<h2 id='old_dead'>Initial Bid :</h2>";
+					echo"<h2>Deadline: $dead</h2>";
+					echo"
+					<form action='placebid.php' method='POST' id='login-form'>
+		
+
+					<p>
+					<label for='login-username'></label>
+					<input type='int'  name='minbid' id='login-username' class='round width-adjust height-adjust' placeholder='Enter the bid amount' autofocus />
+				</p>
+
+				<input class='button round blue ic-right-arrow image-left' type='submit' value='BID'/>
+			
+
+		</form>	";
+					
+
+				}
 
 
-	</div>
+			?>
+
+		</div>	
 
 
 

@@ -21,13 +21,14 @@
 $con=mysqli_connect("localhost","root","","mini");
 
 // Check connection
-if (mysqli_connect_errno())
+/*if (mysqli_connect_errno())
   {
   echo "Failed to connect to MySQL: " . mysqli_connect_error();
   }
  else {
  	echo "Successfull";
  }
+ */
 ?>
 <!-- on getting the POST values store them to variables and	call the TEST FUNCTION -->
 	<?php 
@@ -191,7 +192,7 @@ if (mysqli_connect_errno())
 	<!-- FOOTER -->
 	<div id="footer">
 
-		<p>&copy; Copyright 2013 <a href="#">Crown Inc</a>. All rights reserved.</p>
+		<p>&copy; Copyright 2013 <a href="#">Cec Inc</a>. All rights reserved.</p>
 	
 	</div> <!-- end footer -->
 

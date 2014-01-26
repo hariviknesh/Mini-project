@@ -640,8 +640,11 @@ div.content-module-heading {
 div.content-module-main { padding: 1em; /* 16/16 */ }
 
 
+
+
 /* ---------- FOOTER ---------- */
 div#footer {
+
 	text-align: center;
 	padding: 1.875em 0; /* 30/16 */
 }
@@ -651,15 +654,13 @@ div#footer {
 	padding-bottom: 20px;
 	padding-left: 80px;
 	padding-right: 80px;
-	margin-top: 40px;
-	margin-left: 580px;
+	
 }
 .home-signup {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	padding-left: 80px;
 	padding-right: 80px;	
-	margin-left: 580px;
 }
 
 #home-or {
@@ -696,5 +697,45 @@ label {
 }
 
 #register_button {
-	margin-left: 650px;
+	/*margin-left: 650px; */
+	left: 50%;
+
+
+}
+
+#welcome-header {
+		margin-left: 30px;
+		color: white;
+}
+.upload-font {
+		font-size: 1.2em;
+}
+
+.right {
+	position: absolute;
+	right: 20px;
+}
+
+/* -----------------grid------------------ */
+
+.og-grid {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+}
+ 
+.og-grid li {
+    display: inline-block;
+    margin: 20px 5px 0 5px;
+    vertical-align: top;
+    height: 250px;
+}
+
+.width-adjust {
+	width: 50%;
+}
+#old_dead {
+	opacity: 0.5;
 }
