@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html lang="eng">
+<html>
 <head>
-	<meta charset="utf-8">
-	<title>Sell Your Books | BookBay</title>
-<!-- Stylesheets -->
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<title>Registered | Book Bay</title>
 	<link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-	<!-- TOP BAR -->
+
+		<!-- TOP BAR -->
 	<div id="top-bar">
 		
 		<div class="page-full-width">
 		
-			<a href="#" class="round button home dark">Book Bay</a>
+			<a href="#" class="round button home ic-left-arrow image-left dark">Book Bay</a>
 
 		</div> <!-- end full-width -->	
 	
 	</div> <!-- end top-bar -->
 
-	<!-- HEADER -->
+<!-- HEADER -->
 	<div id="header">
 		
 		<div class="page-full-width cf">
 	
-			<div id="home-intro"class="fl">
+			<div id="login-intro" class="fl">
 			
-				<h1>WELCOME TO BOOK BAY</h1>
-				<h5>A place to sell your books</h5>
+				<h1>Registered to Book Bay</h1>
+				<h5>Enjoy</h5>
 			
 			</div> <!-- login-intro -->
 			
@@ -38,24 +37,21 @@
 		</div> <!-- end full-width -->	
 
 	</div> <!-- end header -->
-	
+
+
 	<div id="content">
-
-				<a href="login.php" class="button round blue image-right ic-right-arrow home-login">LOG IN</a>
-	
-				<p id="home-or">OR</p>
-
-			<a href="signup.php" class="button round blue image-right ic-right-arrow home-signup">SIGN UP</a>
-
-
+		<div id="register_text1">You a have been registered to Book Bay Successfully</div> <br>
+		<div id="register_text2">Now, you can login to your account</div> <br>
+		<div id="register_button">
+		<a poi href="login.php" class="button round blue"> LOG IN</a>
+		</div>
 	</div>
-
-
-<!-- FOOTER -->
+	<!-- FOOTER -->
 	<div id="footer">
 
 		<p>&copy; Copyright 2013 <a href="#">Crown Inc</a>. All rights reserved.</p>
 	
 	</div> <!-- end footer -->
+	
 </body>
 </html>

@@ -1,14 +1,34 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>Register as a BookBay Member</title>
-<!--home button -->
-	<h1> <a href="index.php">Book Bay</a></h1>
-	<hr>
-	<h2>REGISTER</h2>
+	<meta charset="utf-8">
+	<title>Register | Book Bay</title>
+	
+	<!-- Stylesheets -->
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet'>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Optimize for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
+
+
 </head>
 <body>
+
+
+	<?php
+// Create connection
+$con=mysqli_connect("localhost","root","","mini");
+
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+ else {
+ 	echo "Successfull";
+ }
+?>
 <!-- on getting the POST values store them to variables and	call the TEST FUNCTION -->
 	<?php 
 		//clear the variables
@@ -32,11 +52,11 @@
 			      $valid= false;
 			      }
 			 }
-			if(empty($_POST["id"]))
-				{$idErr= "Id is required";
+			if(empty($_POST["adno"]))
+				{$idErr= "Register number is required";
 				  $valid= false;	}
 			else
-			{$id= test_input($_POST["id"]);	
+			{$id= test_input($_POST["adno"]);	
 			 if (!preg_match("/^[0-9]*$/",$id))
 		      {
 		      $idErr = "Only numbers are allowed"; 
@@ -59,12 +79,28 @@
 			if(empty($_POST["password"]))
 				{$passwordErr= "Password is required";
 				  $valid= false;	}
+			elseif ($_POST["password"]!=$_POST["password2"] ){
+				$passwordErr= "Passwords don't Match";
+				$valid= false;
+			}
 			else
 			{$password= test_input($_POST["password"]); }
 
 			if ($valid) {
-			header('Location:welcome.php');
+
+				// Insert into database: User Table
+
+				$sql= "INSERT INTO user (adno, Name, Password, Email)
+						VALUES
+						('$_POST[adno]', '$_POST[name]', '$_POST[password]', '$_POST[email]')";
+							if (!mysqli_query($con,$sql))
+						  {
+						  die('Error: ' . mysqli_error($con));
+						  }
+
+			header('Location:register.php');
 			exit();
+			
 		}
 
 }
@@ -81,18 +117,83 @@
 		
 	 ?>
 
-<!--form with validation. On submitting the page sends the field values to itself -->
-	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-		<fieldset>
+		<!-- TOP BAR -->
+	<div id="top-bar">
+		
+		<div class="page-full-width">
+		
+			<a href="index.php" class="round button home ic-left-arrow image-left dark">Book Bay</a>
 
-	    <p>Full Name: <input type="text" name="name" class="textbox" value="<?php echo $name;?>">  <span class="error"> <?php echo $nameErr;?></span></p>
-		<p>Register No: <input type="text" name="id" class="textbox" value="<?php echo $id;?>">   <span class="error"> <?php echo $idErr;?></span></p>
-		<p>Email: <input type="text" name="email" class="textbox" value="<?php echo $email;?>">		<span class="error"> <?php echo $emailErr;?></span></p>
-		<p>Password: <input type="text" name="password" class="textbox" value="<?php echo $password;?>"> <span class="error"> <?php echo $passwordErr;?></span></p>
-		</fieldset>
-		<input type="submit">
+		</div> <!-- end full-width -->	
+	
+	</div> <!-- end top-bar -->
+	
+	
+	<!-- HEADER -->
+	<div id="header">
+		
+		<div class="page-full-width cf">
+	
+			<div id="login-intro" class="fl">
+			
+				<h1>Register to Book Bay</h1>
+				<h5>Enter your details below</h5>
+			
+			</div> <!-- login-intro -->
+			
+			<!-- Change this image to your own company's logo -->
+			<!-- The logo will automatically be resized to 39px height. -->
+			<!-- <a href="#" id="company-branding" class="fr"><img src="images/company-logo.png" alt="Blue Hosting" /></a> -->
+			
+		</div> <!-- end full-width -->	
 
-	</form>
+	</div> <!-- end header -->
+	
+	
+	
+	<!-- MAIN CONTENT -->
+	<div id="content">
+	
+		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" id="login-form">
+		
+			<fieldset>
+
+				<p>
+					<label for="full-name">FULL NAME</label>
+					<input type="text" name="name" id="full-name" class="round full-width-input" value="<?php echo $name;?>" autofocus><span> <?php echo $nameErr;?> </span>
+				</p>
+				<p>
+					<label for="register-no">REGISTER NUMBER</label>
+					<input type="int" name="adno" id="register-no" class="round full-width-input height-adjust" value="<?php echo $id;?>"> <span> <?php echo $idErr;?> </span>
+				</p>
+				<p>
+					<label for="email">EMAIL</label>
+					<input type="text" name="email" id="email" class="round full-width-input" value="<?php echo $email;?>"> <span> <?php echo $emailErr;?> </span>
+				</p>
+				<p>
+					<label for="login-password">password</label>
+					<input type="password" name="password" id="login-password" class="round full-width-input">
+				</p>
+				<p>
+					<label for="login-password">confirm password</label>
+					<input type="password" name="password2" id="login-password" class="round full-width-input"> <span> <?php echo $passwordErr;?> </span>
+				</p>
+
+			</fieldset>
+			<input class="button round blue image-right ic-right-arrow" type="submit">
+			<br/><br/><div class="information-box round">If you already have an account , return to the Home and Log In.	</div>
+
+		</form>
+		
+	</div> <!-- end content -->
+	
+	
+	<!-- FOOTER -->
+	<div id="footer">
+
+		<p>&copy; Copyright 2013 <a href="#">Crown Inc</a>. All rights reserved.</p>
+	
+	</div> <!-- end footer -->
 
 </body>
 </html>
