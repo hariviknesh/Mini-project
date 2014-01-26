@@ -1,0 +1,26 @@
+fieldset
+{
+	width: 700px;
+	border: 0;
+}
+a
+{
+	text-decoration: none;
+}
+
+input.textbox
+{
+	
+	position:fixed;
+
+	width:300px;
+	left: 150px;
+
+}
+.error
+{
+
+	/*position: fixed;
+	left: 460px;*/
+	float: right;
+}
